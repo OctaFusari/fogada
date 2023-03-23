@@ -1,0 +1,15 @@
+.container__generale{
+    padding: 10vw;
+}
+
+h1,h2,h3,h4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.title__upper h1{
+    font-size: 5rem;
+}
+
+.title__upper h3{
+    font-size: 3rem;
+}
