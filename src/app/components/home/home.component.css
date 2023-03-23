@@ -1,15 +1,113 @@
-.container__generale{
-    padding: 10vw;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Outfit:wght@600;700;800;900&display=swap');
+* {
+    font-family: 'Outfit', sans-serif;
 }
 
-h1,h2,h3,h4{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.container__generale {
+    padding: 6vw 10vw 10vw 10vw;
 }
 
-.title__upper h1{
+h1,
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.title__upper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". . .";
+    color: rgb(63, 63, 63);
+}
+
+.title__upper__sezione__uno {
+    z-index: 99;
+}
+
+.title__upper__sezione__due {
+    z-index: 0;
+}
+
+.title__upper__sezione__uno h1 {
+    margin-right: -10cm !important;
+    font-size: 8rem;
+    color: rgb(130, 133, 0);
+}
+
+.title__upper__sezione__uno h3 {
+    margin-right: -10cm !important;
+    margin-left: -2cm !important;
     font-size: 5rem;
+    color: rgb(130, 133, 0);
 }
 
-.title__upper h3{
-    font-size: 3rem;
+.title__upper__sezione__tre {
+    padding: 10vw 0vw 10vw 6vw;
+}
+
+ul {
+    list-style: none;
+}
+
+.title__upper__sezione__tre ul li {
+    margin-bottom: 4vw;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.title__upper__sezione__tre ul li:hover {
+    margin-left: 1vw;
+    color: rgb(160, 163, 0);
+}
+
+.coordinates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". .";
+}
+
+.footer {
+    background-color: rgb(130, 133, 0);
+    padding: 4vw 10vw 0vw 10vw;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: 1fr 0.2fr;
+    grid-template-areas: "footer__section__1 footer__section__2 footer__section__3" "octimal octimal octimal";
+}
+
+.footer__section__1 {
+    grid-area: footer__section__1;
+}
+
+.footer__section__2 {
+    grid-area: footer__section__2;
+    display: flex;
+    align-items: center;
+}
+
+.footer__section__3 {
+    grid-area: footer__section__3;
+    display: flex;
+    align-items: center;
+}
+
+.footer__section__1 h2 {
+    font-size: 4rem;
+}
+
+.footer__section__1 h4 {
+    font-size: 2rem;
+    margin-top: -1cm;
+}
+
+.octimal {
+    margin-top: 2vw;
+    grid-area: octimal;
+    text-align: center;
+}
+
+.octimal h4 {
+    font-family: 'Montserrat', sans-serif !important;
+    color: #3b3b3b44
 }

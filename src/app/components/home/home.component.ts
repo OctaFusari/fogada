@@ -12,4 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  octimal(){
+    window.location.href = "https://octimal.it/";
+  }
+
 }
