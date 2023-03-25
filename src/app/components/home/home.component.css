@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Outfit:wght@600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@1,900&family=Shadows+Into+Light&display=swap');
+
 * {
     font-family: 'Outfit', sans-serif;
     color: rgb(63, 63, 63);
@@ -21,40 +22,48 @@ a {
 
 h1,
 h3 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Shadows Into Light', cursive;
     color: rgb(160, 163, 0);
 }
 
 .title__upper {
+    z-index: 99;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: ". . .";
 }
 
 .title__upper__sezione__uno {
     z-index: 99;
+    margin-top: -2cm;
 }
 
 .title__upper__sezione__due {
-    z-index: 0;
+    z-index: 50;
+}
+
+.title__upper__sezione__due img{
+    width: 100%;
 }
 
 .title__upper__sezione__uno h1 {
     margin-right: -10cm !important;
     font-size: 8rem;
-    color: rgb(130, 133, 0);
+    color: rgb(0, 102, 136);
 }
 
 .title__upper__sezione__uno h3 {
+    margin-top: -2cm;
     margin-right: -10cm !important;
-    margin-left: -2cm !important;
-    font-size: 5rem;
-    color: rgb(130, 133, 0);
+    font-size: 3rem;
+    color: rgb(0, 102, 136);
+
 }
 
 .title__upper__sezione__tre {
-    padding: 10vw 0vw 10vw 6vw;
+    padding: 6vw 0vw 10vw 10vw;
+    z-index: 99;
 }
 
 ul {
@@ -62,21 +71,34 @@ ul {
 }
 
 .title__upper__sezione__tre ul li {
-    margin-bottom: 4vw;
     cursor: pointer;
     transition-duration: 0.2s;
+    line-height: 2cm;
 }
 
 .title__upper__sezione__tre ul li:hover {
-    margin-left: 1vw;
-    color: rgb(160, 163, 0);
+    padding-left: 2vw;
+}
+
+.title__upper__sezione__tre ul li:hover h4{
+    color: rgb(0, 102, 136) !important;
 }
 
 .coordinates {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: ". .";
+    padding: 6vw 0vw 0vw 0vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 0;
+}
+
+.coordinates h4{
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 18rem !important;
+    color: rgba(216, 216, 216, 0.268);
+    transform: rotate(10deg);
 }
 
 
