@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@1,900&family=Shadows+Into+Light&display=swap');
-
 * {
     font-family: 'Outfit', sans-serif;
     color: rgb(63, 63, 63);
 }
 
 .container__generale {
-    padding: 6vw 10vw 10vw 10vw;
+    padding: 5vw 10vw 10vw 10vw;
 }
 
 h1 {
@@ -23,7 +22,7 @@ a {
 h1,
 h3 {
     font-family: 'Shadows Into Light', cursive;
-    color: rgb(160, 163, 0);
+    color: rgb(0, 102, 136);
 }
 
 .title__upper {
@@ -36,33 +35,52 @@ h3 {
 
 .title__upper__sezione__uno {
     z-index: 99;
-    margin-top: -2cm;
+    margin-top: 2cm;
 }
 
 .title__upper__sezione__due {
     z-index: 50;
 }
 
-.title__upper__sezione__due img{
+.title__upper__sezione__due img {
     width: 100%;
 }
 
 .title__upper__sezione__uno h1 {
-    margin-right: -10cm !important;
+    margin-right: -10cm;
     font-size: 8rem;
+    margin-left: 2cm;
     color: rgb(0, 102, 136);
 }
 
 .title__upper__sezione__uno h3 {
     margin-top: -2cm;
-    margin-right: -10cm !important;
+    margin-left: 1cm;
+    margin-right: -10cm;
     font-size: 3rem;
     color: rgb(0, 102, 136);
+}
 
+.title__upper__sezione__uno h4 {
+    margin-top: 6vw;
+    margin-left: 2cm;
+}
+
+.menu {
+    margin: 0 -3cm 0 -3cm;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". . . .";
+}
+
+.menu div {
+    text-align: center;
+    padding: 1vw;
 }
 
 .title__upper__sezione__tre {
-    padding: 6vw 0vw 10vw 10vw;
+    padding: 16vw 0vw 10vw 0vw;
     z-index: 99;
 }
 
@@ -73,15 +91,15 @@ ul {
 .title__upper__sezione__tre ul li {
     cursor: pointer;
     transition-duration: 0.2s;
-    line-height: 2cm;
+    line-height: 3cm;
 }
 
 .title__upper__sezione__tre ul li:hover {
     padding-left: 2vw;
 }
 
-.title__upper__sezione__tre ul li:hover h4{
-    color: rgb(0, 102, 136) !important;
+.title__upper__sezione__tre ul li:hover a {
+    color: rgb(0, 102, 136);
 }
 
 .coordinates {
@@ -93,10 +111,10 @@ ul {
     z-index: 0;
 }
 
-.coordinates h4{
-    margin: 0 !important;
-    padding: 0 !important;
-    font-size: 18rem !important;
+.coordinates h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 20rem;
     color: rgba(216, 216, 216, 0.268);
     transform: rotate(10deg);
 }
@@ -132,16 +150,19 @@ R
 */
 
 .footer {
-    background-color: rgb(130, 133, 0);
-    padding: 4vw 10vw 0vw 10vw;
+    height: 900px;
+    background-color: rgb(0, 0, 0);
+    padding: 6vw 10vw 0vw 10vw;
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 1fr 0.2fr;
     grid-template-areas: "footer__section__1 footer__section__2 footer__section__3" "octimal octimal octimal";
 }
 
 .footer__section__1 {
     grid-area: footer__section__1;
+    display: flex;
+    align-items: center;
 }
 
 .footer__section__2 {
@@ -157,12 +178,21 @@ R
 }
 
 .footer__section__1 h2 {
-    font-size: 4rem;
+    margin-top: -2cm;
+    font-family: 'Shadows Into Light', cursive;
+    color: rgb(0, 102, 136);
+    font-size: 8rem;
 }
 
 .footer__section__1 h4 {
-    font-size: 2rem;
-    margin-top: -1cm;
+    font-size: 3rem;
+    margin-top: -2cm;
+    font-family: 'Shadows Into Light', cursive;
+    color: rgb(0, 102, 136);
+}
+
+.footer h2 {
+    color: rgb(0, 102, 136);
 }
 
 .octimal {
@@ -172,8 +202,14 @@ R
 }
 
 .octimal h4 {
-    font-family: 'Montserrat', sans-serif !important;
-    color: #3b3b3b44
+    font-family: 'Montserrat', sans-serif;
+    color: #3b3b3b44;
+    transition-duration: 0.2s;
+}
+
+.octimal h4:hover {
+    font-family: 'Montserrat', sans-serif;
+    color: #007E6D
 }
 
 #animazionecentro {
@@ -183,11 +219,10 @@ R
     top: 0;
     left: 0;
     outline: none;
-    display: none !important;
 }
 
 .main {
-    display: block !important;
+    display: block;
     position: absolute;
     overflow: inherit;
     width: 100%;
