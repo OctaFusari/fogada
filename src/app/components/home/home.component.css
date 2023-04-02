@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@1,900&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond&family=Montserrat:ital,wght@1,900&display=swap');
 * {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'EB Garamond', serif;
+    font-weight: 700;
     color: rgb(63, 63, 63);
 }
 
@@ -9,7 +10,8 @@
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 6rem;
+    margin-bottom: 0;
 }
 
 p,
@@ -20,8 +22,9 @@ a {
 }
 
 h1,
-h3 {
-    font-family: 'Shadows Into Light', cursive;
+h3,
+h4 {
+    font-family: 'Bebas Neue', cursive;
     color: rgb(0, 102, 136);
 }
 
@@ -35,7 +38,7 @@ h3 {
 
 .title__upper__sezione__uno {
     z-index: 99;
-    margin-top: 2cm;
+    margin-top: 6vw;
 }
 
 .title__upper__sezione__due {
@@ -49,13 +52,13 @@ h3 {
 .title__upper__sezione__uno h1 {
     margin-right: -10cm;
     font-size: 8rem;
-    margin-left: 2cm;
+    margin-left: 2.5cm;
     color: rgb(0, 102, 136);
 }
 
 .title__upper__sezione__uno h3 {
-    margin-top: -2cm;
-    margin-left: 1cm;
+    margin-top: -0.0cm;
+    margin-left: 2cm;
     margin-right: -10cm;
     font-size: 3rem;
     color: rgb(0, 102, 136);
@@ -66,44 +69,17 @@ h3 {
     margin-left: 2cm;
 }
 
-.menu {
-    margin: 0 -3cm 0 -3cm;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: ". . . .";
-}
-
-.menu div {
-    text-align: center;
-    padding: 1vw;
-}
-
 .title__upper__sezione__tre {
-    padding: 16vw 0vw 10vw 0vw;
+    padding: 12vw 0vw 10vw 5vw;
     z-index: 99;
 }
 
-ul {
-    list-style: none;
-}
-
-.title__upper__sezione__tre ul li {
-    cursor: pointer;
-    transition-duration: 0.2s;
-    line-height: 3cm;
-}
-
-.title__upper__sezione__tre ul li:hover {
-    padding-left: 2vw;
-}
-
-.title__upper__sezione__tre ul li:hover a {
-    color: rgb(0, 102, 136);
+.title__upper__sezione__tre p {
+    margin-bottom: 1cm;
 }
 
 .coordinates {
-    padding: 6vw 0vw 0vw 0vw;
+    padding: 0vw 0vw 0vw 0vw;
     position: absolute;
     top: 0;
     left: 0;
@@ -112,11 +88,33 @@ ul {
 }
 
 .coordinates h4 {
+    font-family: 'EB Garamond', serif;
     margin: 0;
     padding: 0;
-    font-size: 20rem;
+    font-size: 24rem;
     color: rgba(216, 216, 216, 0.268);
     transform: rotate(10deg);
+}
+
+button {
+    border-radius: 2rem;
+    padding: 1vw 2vw 1vw 2vw;
+    transition: .2s;
+    color: rgb(0, 102, 136);
+    border-top: 2px solid rgb(0, 102, 136);
+    border-bottom: 2px solid rgb(0, 102, 136);
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    background-color: white;
+}
+
+button:hover {
+    color: white;
+    border-top: 2px solid rgb(0, 102, 136);
+    border-bottom: 2px solid rgb(0, 102, 136);
+    border-left: 2px solid rgb(0, 102, 136);
+    border-right: 2px solid rgb(0, 102, 136);
+    background-color: rgb(0, 102, 136);
 }
 
 
@@ -133,8 +131,35 @@ E
     margin: 20vw 0vw 20vw 0vw;
 }
 
+.core__body__superior {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". .";
+}
+
 .testo__body {
-    max-width: 400PX;
+    max-width: 400px
+}
+
+.immagini__body__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". .";
+}
+
+.immagini__body__container button {
+    margin: -0.38cm 1vw 1vw 1vw;
+}
+
+.img__body {
+    width: 400px;
+}
+
+.immagini__body__container__sezdue {
+    margin-left: 2cm;
+    margin-top: 3cm;
 }
 
 
@@ -179,7 +204,7 @@ R
 
 .footer__section__1 h2 {
     margin-top: -2cm;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Bebas Neue', cursive;
     color: rgb(0, 102, 136);
     font-size: 8rem;
 }
@@ -187,7 +212,7 @@ R
 .footer__section__1 h4 {
     font-size: 3rem;
     margin-top: -2cm;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Bebas Neue', cursive;
     color: rgb(0, 102, 136);
 }
 
