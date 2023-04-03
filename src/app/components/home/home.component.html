@@ -13,7 +13,7 @@
                     <div>
                         <p>"Se ami faticare, correre in montagna oppure lo sci alpinismo allora <a style="font-style:italic;color: rgb(0, 102, 136)">la fogada</a> fa al caso tuo."</p>
                         <div>
-                            <button>Scopri di più</button>
+                            <button class="light__button">Scopri di più</button>
                         </div>
                     </div>
                 </div>
@@ -37,24 +37,61 @@
                         <div class="immagini__body__container__sezuno">
                             <img class="img__body img__body__1" src="../../../assets/images/img__body__1.jpg">
                             <div>
-                                <button>Edizione estiva</button>
+                                <button class="full__button__light">Edizione estiva</button>
                             </div>
                         </div>
                         <div class="immagini__body__container__sezdue">
                             <img class="img__body img__body__2" src="../../../assets/images/img__body__2.jpg">
                             <div>
-                                <button>Edizione invernale</button>
+                                <button class="full__button">Edizione invernale</button>
                             </div>
                         </div>
 
                     </div>
 
                 </div>
-                <div class="core__body__percorso">
-                    <h1>Il percorso</h1>
-                    <p>
-                        Il percorso consiste nella risalita
-                    </p>
+                <div class="container__body__contenuto">
+                    <div class="container__body__contenuto__menu">
+                        <div>
+                            <h2 (click) ="coreBody = 0">Edizione estiva</h2>
+                        </div>
+                        <div>
+                            <h2 (click) ="coreBody = 1">Edizione invernale</h2>
+                        </div>
+                    </div>
+                    <div class="container__body__contenuto__inside">
+                        <div class="body__estivo" *ngIf="coreBody == 0">
+                            <div class="core__body__percorso">
+                                    <div  class="core__body__percorso__desc">
+                                        <div> 
+                                            <h1>Il percorso</h1>
+                                            <p>
+                                                Il percorso è situato a Brentonico in Trentino e consiste nella risalita di un 
+                                                percorso lungo 4 km con un dislivello di più di 700m che porta alla croce di malga campo,
+                                                questa sfida è controllata in ogni dettaglio ed è studiata
+                                                e curata dallo staff per rendere unica l'esperienza di chi lo percorre.
+                                            </p>
+                                        </div>
+                                        <div class="core__body__percorso__desc__dati">
+                                            <h2>Brentonico</h2>
+                                            <h2>800m</h2>
+                                            <h2>3km</h2>
+                                        </div>
+                                    </div>
+                                    <div class="core__body__percorso__image">
+                                        <img src="../../../assets/images/mappa.png">
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="body__invernale" *ngIf="coreBody == 1">
+                            <div class="core__body__percorso">
+                                <h1>Il percorso</h1>
+                                <p>
+                                    Il percorso consiste nella risalita 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

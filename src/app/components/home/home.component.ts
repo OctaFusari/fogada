@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('animazioneCentro', { static: true })
   canvasElementRef!: ElementRef<HTMLCanvasElement>;
+
+  coreBody = 0;
   
   constructor() { }
 
@@ -32,7 +34,7 @@ export class HomeComponent implements OnInit {
       curve__x += 0.1
     }
 
-    const curve = new THREE.CatmullRomCurve3( [
+    let curve = new THREE.CatmullRomCurve3( [
       new THREE.Vector3( curve__x-70, curve__y-35 ),
       new THREE.Vector3( curve__x-60, curve__y-25 ),
       new THREE.Vector3( curve__x-30, curve__y-10 ),
@@ -96,7 +98,40 @@ export class HomeComponent implements OnInit {
 
     })
 
+    window.addEventListener('scroll', (size:any) => {
+      curve__x += 1
+      curve__y += 1
+
+      curve= new THREE.CatmullRomCurve3( [
+        new THREE.Vector3( curve__x-70, curve__y-35 ),
+        new THREE.Vector3( curve__x-60, curve__y-25 ),
+        new THREE.Vector3( curve__x-30, curve__y-10 ),
+        new THREE.Vector3( curve__x-20, curve__y-8 ),
+        new THREE.Vector3( curve__x-10, curve__y ),
+        new THREE.Vector3( curve__x+14, curve__y+8 ),
+        new THREE.Vector3( curve__x+34, curve__y+12 ),
+        
+        new THREE.Vector3( curve__x+36, curve__y+19 ),
+        new THREE.Vector3( curve__x+34, curve__y+19 ),
+        new THREE.Vector3( curve__x+34, curve__y+21 ),
+        new THREE.Vector3( curve__x+36, curve__y+21 ),
+        new THREE.Vector3( curve__x+36, curve__y+23 ),
+        new THREE.Vector3( curve__x+38, curve__y+23 ),
+        new THREE.Vector3( curve__x+38, curve__y+21 ),
+        new THREE.Vector3( curve__x+41, curve__y+21 ),
+        new THREE.Vector3( curve__x+41, curve__y+19 ),
+        new THREE.Vector3( curve__x+38, curve__y+19 ),
+        new THREE.Vector3( curve__x+39, curve__y+12 ),
+  
+        new THREE.Vector3( curve__x+44, curve__y+10 ),
+        new THREE.Vector3( curve__x+50, curve__y+8 ),
+        new THREE.Vector3( curve__x+70, curve__y+2 ),
+        new THREE.Vector3( curve__x+80, curve__y-8 ),
+      ] );
+    })
+
     function animate() {
+
       requestAnimationFrame( animate );
       renderer.render( scene, camera );
     }
