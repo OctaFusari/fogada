@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fogada';
+
+  load = 1
+
+  ngOnInit(): void {
+    this.load = 1;
+    setTimeout(() => {
+      this.load = 0;
+    },20000);
+  }
 }

@@ -23,6 +23,7 @@
     "gsap": "^3.11.5",
     "rxjs": "~7.5.0",
     "three": "^0.150.1",
+    "three-buffer-geometry-utils": "^1.0.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

@@ -12,6 +12,19 @@ export class HomeComponent implements OnInit {
   canvasElementRef!: ElementRef<HTMLCanvasElement>;
 
   coreBody = 0;
+  changeState(mode:any){
+    if (mode == "sci"){
+      this.coreBody = 1
+      document.documentElement.style.setProperty('--background', 'rgba(14, 14, 14)');
+      document.documentElement.style.setProperty('--text', 'rgba(238, 238, 238)');
+      document.documentElement.style.setProperty('--text__back', 'rgba(36, 36, 36, 0.267)');
+    }else{
+      this.coreBody = 0
+      document.documentElement.style.setProperty('--background', 'rgba(255, 255, 255)');
+      document.documentElement.style.setProperty('--text', 'rgba(63, 63, 63)');
+      document.documentElement.style.setProperty('--text__back', 'rgba(221, 221, 221, 0.267)');
+    }
+  }
   
   constructor() { }
 
@@ -35,12 +48,12 @@ export class HomeComponent implements OnInit {
     }
 
     let curve = new THREE.CatmullRomCurve3( [
-      new THREE.Vector3( curve__x-70, curve__y-35 ),
-      new THREE.Vector3( curve__x-60, curve__y-25 ),
-      new THREE.Vector3( curve__x-30, curve__y-10 ),
-      new THREE.Vector3( curve__x-20, curve__y-8 ),
-      new THREE.Vector3( curve__x-10, curve__y ),
-      new THREE.Vector3( curve__x+14, curve__y+8 ),
+      new THREE.Vector3( curve__x-70, curve__y-25 ),
+      new THREE.Vector3( curve__x-60, curve__y-23 ),
+      new THREE.Vector3( curve__x-30, curve__y-14 ),
+      new THREE.Vector3( curve__x-20, curve__y-10 ),
+      new THREE.Vector3( curve__x-10, curve__y-9 ),
+      new THREE.Vector3( curve__x+14, curve__y+6 ),
       new THREE.Vector3( curve__x+34, curve__y+12 ),
       
       new THREE.Vector3( curve__x+36, curve__y+19 ),
@@ -81,8 +94,6 @@ export class HomeComponent implements OnInit {
       height: window.innerHeight
     }
 
-    
-
     window.addEventListener('resize', (size: any) => {
       grandezze.width = window.innerWidth;
       grandezze.height = window.innerHeight;
@@ -94,43 +105,37 @@ export class HomeComponent implements OnInit {
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
       renderer.render(scene, camera); // -> Also needed
-      console.log(window.innerHeight / 160)
 
     })
 
     window.addEventListener('scroll', (size:any) => {
-      curve__x += 1
-      curve__y += 1
+      console.log(size)
+      
+      let screenY = 0;
+      let changeX = 1;
+      let changeY = 1;
 
-      curve= new THREE.CatmullRomCurve3( [
-        new THREE.Vector3( curve__x-70, curve__y-35 ),
-        new THREE.Vector3( curve__x-60, curve__y-25 ),
-        new THREE.Vector3( curve__x-30, curve__y-10 ),
-        new THREE.Vector3( curve__x-20, curve__y-8 ),
-        new THREE.Vector3( curve__x-10, curve__y ),
-        new THREE.Vector3( curve__x+14, curve__y+8 ),
-        new THREE.Vector3( curve__x+34, curve__y+12 ),
-        
-        new THREE.Vector3( curve__x+36, curve__y+19 ),
-        new THREE.Vector3( curve__x+34, curve__y+19 ),
-        new THREE.Vector3( curve__x+34, curve__y+21 ),
-        new THREE.Vector3( curve__x+36, curve__y+21 ),
-        new THREE.Vector3( curve__x+36, curve__y+23 ),
-        new THREE.Vector3( curve__x+38, curve__y+23 ),
-        new THREE.Vector3( curve__x+38, curve__y+21 ),
-        new THREE.Vector3( curve__x+41, curve__y+21 ),
-        new THREE.Vector3( curve__x+41, curve__y+19 ),
-        new THREE.Vector3( curve__x+38, curve__y+19 ),
-        new THREE.Vector3( curve__x+39, curve__y+12 ),
-  
-        new THREE.Vector3( curve__x+44, curve__y+10 ),
-        new THREE.Vector3( curve__x+50, curve__y+8 ),
-        new THREE.Vector3( curve__x+70, curve__y+2 ),
-        new THREE.Vector3( curve__x+80, curve__y-8 ),
-      ] );
+        changeX += .01
+        changeY += .01
+
+      splineObject.scale.set( changeX, changeY, 1 );
+      
+/*       curve__x += .01
+      curve__y += .01
+      splineObject.scale.set( curve__x, curve__y, 1 ); */
     })
 
     function animate() {
+
+      if (window.innerWidth < 1111){
+        camera.position.x = 30;
+        camera.position.y = 8;
+        camera.position.z = 25;
+      }else{
+        camera.position.x = 0;
+        camera.position.y = 0;
+        camera.position.z = 40;
+      }
 
       requestAnimationFrame( animate );
       renderer.render( scene, camera );

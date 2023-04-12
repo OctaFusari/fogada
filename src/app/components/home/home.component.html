@@ -7,7 +7,8 @@
                     <h3>Vertical Race</h3>
                 </div>
                 <div class="title__upper__sezione__due">
-                    <img src="../../../assets/images/fogada_img_2.jpg">
+                    <img *ngIf="coreBody == 0" src="../../../assets/images/fogada_img_2.jpg">
+                    <img *ngIf="coreBody == 1" src="../../../assets/images/fogada_img_3.jpg">
                 </div>
                 <div class="title__upper__sezione__tre">
                     <div>
@@ -51,44 +52,45 @@
 
                 </div>
                 <div class="container__body__contenuto">
-                    <div class="container__body__contenuto__menu">
-                        <div>
-                            <h2 (click) ="coreBody = 0">Edizione estiva</h2>
-                        </div>
-                        <div>
-                            <h2 (click) ="coreBody = 1">Edizione invernale</h2>
-                        </div>
-                    </div>
-                    <div class="container__body__contenuto__inside">
-                        <div class="body__estivo" *ngIf="coreBody == 0">
-                            <div class="core__body__percorso">
-                                    <div  class="core__body__percorso__desc">
-                                        <div> 
-                                            <h1>Il percorso</h1>
-                                            <p>
-                                                Il percorso è situato a Brentonico in Trentino e consiste nella risalita di un 
-                                                percorso lungo 4 km con un dislivello di più di 700m che porta alla croce di malga campo,
-                                                questa sfida è controllata in ogni dettaglio ed è studiata
-                                                e curata dallo staff per rendere unica l'esperienza di chi lo percorre.
-                                            </p>
-                                        </div>
-                                        <div class="core__body__percorso__desc__dati">
-                                            <h2>Brentonico</h2>
-                                            <h2>800m</h2>
-                                            <h2>3km</h2>
-                                        </div>
-                                    </div>
-                                    <div class="core__body__percorso__image">
-                                        <img src="../../../assets/images/mappa.png">
-                                    </div>
+                    <div class="body__estivo" *ngIf="coreBody == 0">
+                        <div class="core__body__percorso">
+                            <div class="core__body__percorso__desc">
+                                <div>
+                                    <h1>Il percorso</h1>
+                                    <p>
+                                        Il percorso è situato a Brentonico in Trentino e consiste nella risalita di un percorso lungo 4 km con un dislivello di più di 700m che porta alla croce di malga campo, questa sfida è controllata in ogni dettaglio ed è studiata e curata dallo staff per
+                                        rendere unica l'esperienza di chi lo percorre.
+                                    </p>
+                                </div>
+                                <div class="core__body__percorso__desc__dati">
+                                    <h2>Brentonico</h2>
+                                    <h2>800m</h2>
+                                    <h2>3km</h2>
+                                </div>
+                            </div>
+                            <div class="core__body__percorso__image">
+                                <img src="../../../assets/images/mappa.png">
                             </div>
                         </div>
-                        <div class="body__invernale" *ngIf="coreBody == 1">
-                            <div class="core__body__percorso">
-                                <h1>Il percorso</h1>
-                                <p>
-                                    Il percorso consiste nella risalita 
-                                </p>
+                    </div>
+                    <div class="body__estivo" *ngIf="coreBody == 1">
+                        <div class="core__body__percorso">
+                            <div class="core__body__percorso__desc">
+                                <div>
+                                    <h1>Il percorso</h1>
+                                    <p>
+                                        Il percorso è situato a Brentonico in Trentino e consiste nella risalita di un percorso lungo 4 km con un dislivello di più di 700m che porta alla croce di malga campo, questa sfida è controllata in ogni dettaglio ed è studiata e curata dallo staff per
+                                        rendere unica l'esperienza di chi lo percorre.
+                                    </p>
+                                </div>
+                                <div class="core__body__percorso__desc__dati">
+                                    <h2>Brentonico</h2>
+                                    <h2>800m</h2>
+                                    <h2>3km</h2>
+                                </div>
+                            </div>
+                            <div class="core__body__percorso__image">
+                                <img src="../../../assets/images/mappa.png">
                             </div>
                         </div>
                     </div>
@@ -135,4 +137,12 @@
 </div>
 <div id="animazionecentro">
     <canvas #animazioneCentro></canvas>
+</div>
+<div class="edizioni">
+    <div>
+        <h2 (click)="changeState('corsa')">Corsa</h2>
+    </div>
+    <div>
+        <h2 (click)="changeState('sci')">Sci</h2>
+    </div>
 </div>

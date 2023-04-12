@@ -1,0 +1,21 @@
+.load__logo h1 {
+    font-size: 8rem;
+    padding: 10vw 10vw 0vw 10vw;
+    color: var(--background);
+}
+
+.load__logo h3 {
+    padding: 0vw 10vw 10vw 10vw;
+    font-size: 3rem;
+    color: var(--background);
+}
+
+.load__logo {
+    margin: 0;
+    top: 0;
+    text-align: center;
+    height: 1300px;
+    background-image: url(../assets/images/fogada__load.png);
+    background-size: cover;
+    background-position: center;
+}

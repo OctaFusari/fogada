@@ -1,5 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond&family=Montserrat:ital,wght@1,900&display=swap');
+:root {
+    --background: rgb(255, 255, 255);
+    --text: rgb(63, 63, 63);
+    --text__back: rgba(221, 221, 221, 0.267);
+    --fogada__blue: rgb(0, 102, 136);
+}
+
+h1,
+h3,
+h4 {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--fogada__blue);
+}
+
 body,
 html {
     margin: 0;
@@ -8,4 +23,6 @@ html {
     right: 0;
     bottom: 0;
     overflow-x: hidden;
+    background-color: var(--background);
+    transition: .4s;
 }
