@@ -1,3 +1,6 @@
+.fogada{
+    display: block !important;
+}
 * {
     font-family: 'EB Garamond', serif;
     font-weight: 700;
@@ -46,6 +49,40 @@ h4 {
 
 .title__upper__sezione__due img {
     width: 100%;
+    animation: upper_animation 2s ease-in-out;
+}
+
+@keyframes upper_animation {
+    from {
+      opacity: 0;
+      transform: translateY(-50%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+@keyframes upper_animation_due {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes upper_animation_uno {
+    from {
+    opacity: 0;
+    transform: translateX(50%);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
 }
 
 .title__upper__sezione__uno h1 {
@@ -53,6 +90,7 @@ h4 {
     font-size: 8rem;
     margin-left: 6vw;
     color: var(--fogada__blue);
+    animation: upper_animation_uno 2s ease-in-out;
 }
 
 .title__upper__sezione__uno h3 {
@@ -61,11 +99,13 @@ h4 {
     margin-right: -10vw;
     font-size: 3rem;
     color: var(--fogada__blue);
+    animation: upper_animation_uno 2s ease-in-out;
 }
 
 .title__upper__sezione__tre {
     padding: 12vw 0vw 10vw 5vw;
     z-index: 99;
+    animation: upper_animation_due 2s ease-in-out;
 }
 
 .coordinates {
@@ -266,7 +306,7 @@ E
 }
 
 .core__body__percorso__image img {
-    margin-top: 10vw;
+    margin-top: 4vw;
     width: 80vw;
 }
 
@@ -311,6 +351,57 @@ E
     padding: 10vw 0 10vw 0;
 }
 
+.lower__body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lower__body__uno{
+    z-index: 99;
+    margin: 0 6vw 0 0;
+    width: 10cm;
+}
+
+.lower__body__due{
+    z-index: 99;
+    margin: 0 0 0 6vw;
+}
+
+.compila{
+    font-size: 2rem;
+}
+
+
+.container {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vh;
+  }
+  
+  .text {
+    width: 4cm;
+    animation: countUp 1s ease-in-out;
+  }
+
+  .text__static{
+    animation: countUp 1s ease-in-out;
+    margin-right: 2vw;
+    width: 18cm;
+  }
+  
+  @keyframes countUp {
+    from {
+      opacity: 0;
+      transform: translateY(50%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
 /* 
 

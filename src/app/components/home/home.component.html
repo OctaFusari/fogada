@@ -1,4 +1,4 @@
-<div class="main">
+<div class="fogada" style="display:none"><div class="main">
     <div class="container__generale">
         <div class="upper__body">
             <div class="title__upper">
@@ -49,7 +49,11 @@
                         </div>
 
                     </div>
-
+                </div>
+                <div>
+                    <div class="container">
+                        <h1 class="text__static counter__text">Iscrizioni annuali</h1><h1 class="text counter__text">0</h1>
+                    </div>            
                 </div>
                 <div class="container__body__contenuto">
                     <div class="body__estivo" *ngIf="coreBody == 0">
@@ -98,8 +102,22 @@
             </div>
         </div>
         <div class="lower__body">
-
+            <div class="lower__body__uno">
+                <h1>Iscriviti</h1>
+                <p>compilando il form cliccando qui accanto e potrai accedere alla gara</p>
+            </div>
+            <div  class="lower__body__due">
+                <div class="form__iscrizione">
+                    <div>
+                        <button class="full__button compila">Compila ora</button>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="container">
+            <h2 class="text__static counter__text">Iscrizioni annuali</h2><h2 class="text counter__text">0</h2>
+            <h2 class="text__static counter__text">Tempo rimanente</h2><h2>2 mesi</h2>
+          </div>
     </div>
     <div class="footer">
         <div class="footer__section__1">
@@ -145,4 +163,6 @@
     <div>
         <h2 (click)="changeState('sci')">Sci</h2>
     </div>
+</div>
+    
 </div>

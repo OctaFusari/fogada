@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     if (mode == "sci"){
       this.coreBody = 1
       document.documentElement.style.setProperty('--background', 'rgba(14, 14, 14)');
-      document.documentElement.style.setProperty('--text', 'rgba(238, 238, 238)');
+      document.documentElement.style.setProperty('--text', 'rgb(201, 201, 201)');
       document.documentElement.style.setProperty('--text__back', 'rgba(36, 36, 36, 0.267)');
     }else{
       this.coreBody = 0
@@ -141,10 +141,82 @@ export class HomeComponent implements OnInit {
       renderer.render( scene, camera );
     }
     animate();
+
+    const textElement:any = document.querySelector('.text');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateText();
+        }
+      });
+    });
+    
+    observer.observe(textElement);
+    
+    function animateText() {
+      let count = 0;
+      const animationDuration = 1000;
+      const increment = 2;
+      const targetValue = 348;
+      const intervalId = setInterval(() => {
+        count += increment;
+        textElement.textContent = count.toString();
+        // if(count == 348){
+        //   textElement.textContent = "100 + 1";
+        // }
+    
+        if (count >= targetValue) {
+          clearInterval(intervalId);
+        }
+      }, animationDuration / (targetValue / increment));
+    }
+
   }
+
+  
 
   octimal(){
     window.location.href = "https://octimal.it/";
   }
 
 }
+
+/*
+
+// Define the Google Form URL
+const formUrl = "https://docs.google.com/forms/d/e/FORM_ID/formResponse";
+
+// Get the form element
+const form = document.getElementById("myForm");
+
+// Add a submit event listener to the form
+form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    // Get the form data
+    const formData = new FormData(form);
+
+    // Convert the form data to an object
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+
+    // Send the form data to Google Form using fetch() API
+    const response = await fetch(formUrl, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+
+    // Check if the form submission was successful
+    if (response.ok) {
+        alert("Form submitted successfully!");
+    } else {
+        alert("Form submission failed.");
+    }
+});
+
+*/
