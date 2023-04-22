@@ -170,10 +170,37 @@ export class HomeComponent implements OnInit {
         }
       }, animationDuration / (targetValue / increment));
     }
+  
+    // Example usage:
+    let targetTime = new Date("2023-05-01T00:00:00").getTime(); // May 1st, 2023 at midnight
+    this.countdown(targetTime); // Start a countdown to the target time
 
   }
 
+  countdown(targetTime: number) {
+    const outputElement:any = document.getElementById("countdown-output");
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const remainingTime = Math.floor((targetTime - now) / 1000);
+      if (remainingTime < 0) {
+        clearInterval(interval);
+        console.log("Countdown complete!");
+      } else {
+        const days = Math.floor(remainingTime / (24 * 60 * 60));
+        const hours = Math.floor((remainingTime % (24 * 60 * 60)) / (60 * 60));
+        const minutes = Math.floor((remainingTime % (60 * 60)) / 60);
+        const seconds = Math.floor(remainingTime % 60);
+        let date = `${days} giorni, ${hours} ore, ${minutes} minuti, ${seconds}`
+        outputElement.innerText = date.toString();
+        
+      }
+    }, 1000);
+  }
   
+  // Example usage:
+  
+  
+
 
   octimal(){
     window.location.href = "https://octimal.it/";
