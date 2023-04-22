@@ -159,15 +159,21 @@ button {
         margin-left: 1vw;
         font-size: 3rem;
     }
-}
-
-@media only screen and (max-width:1480px) {
+    a {
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+        line-height: 2.5rem;
+    }
     p,
     a {
         font-size: 1.2rem;
         letter-spacing: 0.1rem;
         line-height: 2rem;
     }
+}
+
+@media only screen and (max-width:1480px) {
+    
     .title__upper__sezione__uno h1 {
         font-size: 6rem;
     }
@@ -240,6 +246,7 @@ E
 }
 
 .testo__body {
+    margin: 0 4vw 0 4vw;
     max-width: 400px
 }
 
@@ -374,11 +381,10 @@ E
 
 
 .container {
-    height: 30vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10vh;
   }
   
   .text {
@@ -402,6 +408,12 @@ E
       transform: translateY(0);
     }
   }
+
+  @media only screen and (max-width: 1600px){
+    .img__body {
+        width: 340px;
+    }
+}
 
 /* 
 
