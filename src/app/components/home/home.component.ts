@@ -108,22 +108,6 @@ export class HomeComponent implements OnInit {
 
     })
 
-    window.addEventListener('scroll', (size:any) => {
-      console.log(size)
-      
-      let screenY = 0;
-      let changeX = 1;
-      let changeY = 1;
-
-        changeX += .01
-        changeY += .01
-
-      splineObject.scale.set( changeX, changeY, 1 );
-      
-/*       curve__x += .01
-      curve__y += .01
-      splineObject.scale.set( curve__x, curve__y, 1 ); */
-    })
 
     function animate() {
 
@@ -175,6 +159,19 @@ export class HomeComponent implements OnInit {
     let targetTime = new Date("2023-05-01T00:00:00").getTime(); // May 1st, 2023 at midnight
     this.countdown(targetTime); // Start a countdown to the target time
 
+    
+    var carousel:any = document.querySelector('.body__galleria');
+
+/*     carousel.addEventListener('wheel', function(event:any) {
+      event.preventDefault();
+
+      carousel.scrollLeft += event.deltaY;
+    }); */
+
+    window.addEventListener('scroll', (size:any) => {
+
+      carousel.scrollLeft += 10
+    })
   }
 
   countdown(targetTime: number) {
@@ -190,7 +187,7 @@ export class HomeComponent implements OnInit {
         const hours = Math.floor((remainingTime % (24 * 60 * 60)) / (60 * 60));
         const minutes = Math.floor((remainingTime % (60 * 60)) / 60);
         const seconds = Math.floor(remainingTime % 60);
-        let date = `${days} giorni, ${hours} ore, ${minutes} minuti, ${seconds}`
+        let date = `${days} giorni, ${hours} ore, ${minutes} minuti, ${seconds} alla gara`
         outputElement.innerText = date.toString();
         
       }

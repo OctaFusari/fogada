@@ -5,7 +5,9 @@
     --background: rgb(255, 255, 255);
     --text: rgb(63, 63, 63);
     --text__back: rgba(221, 221, 221, 0.267);
+    --text__back__counter: rgba(134, 134, 134, 0.267);
     --fogada__blue: rgb(0, 102, 136);
+    --fogada__blue__glassed: rgba(0, 102, 136, 0.514);
 }
 
 h1,
@@ -25,4 +27,53 @@ html {
     overflow-x: hidden;
     background-color: var(--background);
     transition: .4s;
+}
+
+* {
+    font-family: 'EB Garamond', serif;
+    font-weight: 700;
+    color: var(--text);
+}
+
+h1 {
+    font-size: 6rem;
+    margin-bottom: 0;
+}
+
+p,
+a {
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    line-height: 2.5rem;
+}
+
+h1,
+h3,
+h4 {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--fogada__blue);
+}
+
+.full__button {
+    color: var(--background);
+    border: 2px solid var(--fogada__blue);
+    background-color: var(--fogada__blue);
+}
+
+.full__button:hover {
+    color: var(--fogada__blue);
+    border: 2px solid var(--fogada__blue);
+    background-color: var(--background);
+}
+
+.full__button__light {
+    color: var(--fogada__blue);
+    border: 2px solid var(--fogada__blue);
+    background-color: var(--background);
+}
+
+.full__button__light:hover {
+    color: var(--background);
+    border: 2px solid var(--fogada__blue);
+    background-color: var(--fogada__blue);
 }
