@@ -358,7 +358,7 @@ E
     padding: 10vw 0 10vw 0;
 }
 
-.lower__body{
+.subscribe{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -415,6 +415,22 @@ E
     }
 }
 
+.lower__body__up{
+    z-index: 99;
+}
+
+.fogada__subscribe{
+    position: absolute;
+    z-index: 0;
+}
+
+.fogada__subscribe img{
+    width: 80vw;
+    margin-left: 8cm;
+    margin-top: -2cm;
+    margin-right: -8cm;
+}
+
 /* 
 
 F
@@ -427,13 +443,21 @@ R
 */
 
 .footer {
+    position: sticky;
     height: 900px;
+    z-index:99;
     background-color: rgb(0, 0, 0);
     padding: 10vw 10vw 0vw 10vw;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 1fr 0.2fr;
     grid-template-areas: "footer__section__1 footer__section__2 footer__section__3" "octimal octimal octimal";
+}
+
+@media only screen and (max-width: 1600px){
+    .footer {
+        height: 600px;
+    }
 }
 
 .footer__section__1 {
