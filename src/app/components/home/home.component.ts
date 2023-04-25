@@ -145,34 +145,32 @@ export class HomeComponent implements OnInit {
       const intervalId = setInterval(() => {
         count += increment;
         textElement.textContent = count.toString();
-        // if(count == 348){
-        //   textElement.textContent = "100 + 1";
-        // }
-    
+       
         if (count >= targetValue) {
           clearInterval(intervalId);
         }
       }, animationDuration / (targetValue / increment));
     }
-  
-    // Example usage:
-    let targetTime = new Date("2023-05-01T00:00:00").getTime(); // May 1st, 2023 at midnight
-    this.countdown(targetTime); // Start a countdown to the target time
-
     
     var carousel:any = document.querySelector('.body__galleria');
 
-/*     carousel.addEventListener('wheel', function(event:any) {
-      event.preventDefault();
-
-      carousel.scrollLeft += event.deltaY;
-    }); */
+    let lastscroll = 0;
 
     window.addEventListener('scroll', (size:any) => {
+      if(lastscroll < scrollY){
+        carousel.scrollLeft += 2
+      }else if(lastscroll > scrollY){
+        carousel.scrollLeft -= 2
+      }
 
-      carousel.scrollLeft += 10
+      lastscroll = scrollY
     })
+
+    let targetTime = new Date("2023-05-01T00:00:00").getTime();
+    this.countdown(targetTime);
   }
+  
+
 
   countdown(targetTime: number) {
     const outputElement:any = document.getElementById("countdown-output");
@@ -181,7 +179,6 @@ export class HomeComponent implements OnInit {
       const remainingTime = Math.floor((targetTime - now) / 1000);
       if (remainingTime < 0) {
         clearInterval(interval);
-        console.log("Countdown complete!");
       } else {
         const days = Math.floor(remainingTime / (24 * 60 * 60));
         const hours = Math.floor((remainingTime % (24 * 60 * 60)) / (60 * 60));
@@ -193,54 +190,9 @@ export class HomeComponent implements OnInit {
       }
     }, 1000);
   }
-  
-  // Example usage:
-  
-  
-
 
   octimal(){
     window.location.href = "https://octimal.it/";
   }
 
 }
-
-/*
-
-// Define the Google Form URL
-const formUrl = "https://docs.google.com/forms/d/e/FORM_ID/formResponse";
-
-// Get the form element
-const form = document.getElementById("myForm");
-
-// Add a submit event listener to the form
-form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    // Get the form data
-    const formData = new FormData(form);
-
-    // Convert the form data to an object
-    const data = {};
-    formData.forEach((value, key) => {
-        data[key] = value;
-    });
-
-    // Send the form data to Google Form using fetch() API
-    const response = await fetch(formUrl, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    });
-
-    // Check if the form submission was successful
-    if (response.ok) {
-        alert("Form submitted successfully!");
-    } else {
-        alert("Form submission failed.");
-    }
-});
-
-*/

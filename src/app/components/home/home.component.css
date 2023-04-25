@@ -399,9 +399,11 @@ E
 .item {
     transition: .2s;
     margin: 2vw;
+    margin-left: -4cm !important;
     display: inline-block;
     height: 400px;
     width: 600px;
+    background-size: cover;
 }
 
 .box1 {
