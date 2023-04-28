@@ -257,10 +257,23 @@ E
     padding: 6vw 0vw 6vw 20vw;
 }
 
+.core__body__percorso__desc__dati div {
+    display: flex;
+    margin-top: 1vw;
+    margin-bottom: 2vw
+}
+
+.core__body__percorso__desc__dati svg {
+    margin-top: 10px;
+}
+
 .core__body__percorso__desc__dati h2 {
     font-family: 'Bebas Neue', cursive;
     color: var(--fogada__blue);
     font-size: 3rem;
+    margin: 0;
+    padding: 0;
+    margin-left: 2vw;
 }
 
 .core__body__percorso__image img {
@@ -389,6 +402,13 @@ E
     transform: rotate(-10deg);
 }
 
+.body__galleria__reverse {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 .body__galleria {
     width: 100%;
     height: 400px;
@@ -399,7 +419,6 @@ E
 .item {
     transition: .2s;
     margin: 2vw;
-    margin-left: -4cm !important;
     display: inline-block;
     height: 400px;
     width: 600px;
@@ -407,19 +426,35 @@ E
 }
 
 .box1 {
-    background-image: url('../../../assets/images/img__body__3.jpg');
+    background-image: url('../../../assets/images/carousel__image/ci_1.jpg');
 }
 
 .box2 {
-    background-image: url('../../../assets/images/img__body__2.jpg');
+    background-image: url('../../../assets/images/carousel__image/ci_2.jpg');
 }
 
 .box3 {
-    background-image: url('../../../assets/images/img__body__1.jpg');
+    background-image: url('../../../assets/images/carousel__image/ci_3.jpg');
 }
 
 .box4 {
-    background-image: url('../../../assets/images/img__body__3.jpg');
+    background-image: url('../../../assets/images/carousel__image/ci_4.jpg');
+}
+
+.box5 {
+    background-image: url('../../../assets/images/carousel__image/ci_6.jpg');
+}
+
+.box6 {
+    background-image: url('../../../assets/images/carousel__image/ci_5.jpg');
+}
+
+.box7 {
+    background-image: url('../../../assets/images/carousel__image/ci_7.jpg');
+}
+
+.box8 {
+    background-image: url('../../../assets/images/carousel__image/ci_9.jpg');
 }
 
 
@@ -477,7 +512,7 @@ R
 .footer__section__1 h2 {
     margin-top: -2cm;
     font-family: 'Bebas Neue', cursive;
-    color: var(--background);
+    color: white;
     font-size: 8rem;
 }
 
@@ -485,11 +520,15 @@ R
     font-size: 3rem;
     margin-top: -2cm;
     font-family: 'Bebas Neue', cursive;
-    color: var(--background);
+    color: white;
 }
 
 .footer h2 {
-    color: var(--background);
+    color: white;
+}
+
+.footer a {
+    color: white;
 }
 
 .octimal {

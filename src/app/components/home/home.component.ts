@@ -153,14 +153,20 @@ export class HomeComponent implements OnInit {
     }
     
     var carousel:any = document.querySelector('.body__galleria');
+    var carousel__reverse:any = document.querySelector('.body__galleria__reverse');
 
     let lastscroll = 0;
 
+    carousel.scrollLeft += 600;
+    carousel__reverse.scrollLeft += 3000;
+
     window.addEventListener('scroll', (size:any) => {
       if(lastscroll < scrollY){
-        carousel.scrollLeft += 2
+        carousel.scrollLeft += 2;
+        carousel__reverse.scrollLeft -= 2;
       }else if(lastscroll > scrollY){
-        carousel.scrollLeft -= 2
+        carousel.scrollLeft -= 2;
+        carousel__reverse.scrollLeft += 2;
       }
 
       lastscroll = scrollY
