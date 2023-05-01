@@ -161,6 +161,7 @@ export class HomeComponent implements OnInit {
     carousel__reverse.scrollLeft += 3000;
 
     window.addEventListener('scroll', (size:any) => {
+      
       if(lastscroll < scrollY){
         carousel.scrollLeft += 2;
         carousel__reverse.scrollLeft -= 2;
@@ -199,6 +200,16 @@ export class HomeComponent implements OnInit {
 
   octimal(){
     window.location.href = "https://octimal.it/";
+  }
+
+
+  form(){
+    window.location.href ="https://docs.google.com/forms/d/1-If1BUC846O_ovDsTYCNOjgesHE7IYLZVVn_WnIIOnU/viewform?edit_requested=true";
+  }
+
+  scroll(el: HTMLElement) {
+
+    el.scrollIntoView({ behavior: 'smooth' });
   }
 
 }

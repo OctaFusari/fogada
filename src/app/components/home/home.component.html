@@ -15,7 +15,7 @@
                         <div>
                             <p>"Se ami le sfide come il correre in montagna oppure lo sci alpinismo allora <a style="font-style:italic;color: rgb(0, 102, 136)">la fogada</a> fa al caso tuo."</p>
                             <div>
-                                <button class="light__button">Scopri di più</button>
+                                <button class="light__button" (click)="scroll(target2)">Scopri di più</button>
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
             <div class="core__body">
                 <div>
                     <div class="core__body__superior">
-                        <div class="testo__body">
+                        <div class="testo__body" #target2>
                             <h1>La gara</h1>
                             <p>
                                 La fogada vertical race è disputata nell'altopiano di Brentonico sia nel periodo <a style="font-style:italic">invernale</a> con l'utilizzo degli sci d'alpinismo e anche <a style="font-style:italic">l'estate</a>. La gara
@@ -39,13 +39,13 @@
                             <div class="immagini__body__container__sezuno">
                                 <img class="img__body img__body__1" src="../../../assets/images/img__body__1.jpg">
                                 <div>
-                                    <button class="full__button__light">Iscriviti edizione estiva</button>
+                                    <button (click)="scroll(target1)" class="full__button__light">Iscriviti edizione estiva</button>
                                 </div>
                             </div>
                             <div class="immagini__body__container__sezdue">
                                 <img class="img__body img__body__2" src="../../../assets/images/img__body__2.jpg">
                                 <div>
-                                    <button class="full__button">Iscriviti edizione invernale</button>
+                                    <button (click)="scroll(target1)" class="full__button">Iscriviti edizione invernale</button>
                                 </div>
                             </div>
 
@@ -84,7 +84,7 @@
                                     </div>
                                 </div>
                                 <div class="core__body__percorso__image">
-                                    <img src="../../../assets/images/mappa.png">
+                                    <img src="../../../assets/images/mappa - Copia.png">
                                 </div>
                             </div>
                         </div>
@@ -124,6 +124,9 @@
                             <div class="item box4">
                             </div>
                         </div>
+                        <!--                         <div class="gal__comp">
+                            <h2>Galleria completa</h2>
+                        </div> -->
                         <div class="body__galleria__reverse">
                             <div class="item box5">
                             </div>
@@ -137,7 +140,7 @@
                     </div>
                 </div>
             </div>
-            <div class=" lower__body">
+            <div class=" lower__body" #target1>
                 <div class="fogada__subscribe">
                     <img src="../../../assets/images/fogada__subscribe.png">
                 </div>
@@ -145,11 +148,11 @@
                     <div class="subscribe">
                         <div class="lower__body__uno">
                             <h1>Iscriviti</h1>
-                            <p>compilando il form cliccando qui accanto e potrai accedere alla gara</p>
+                            <p>compilando il form cliccando qui sotto e potrai accedere alla gara</p>
 
                             <div class="form__iscrizione">
                                 <div>
-                                    <button class="full__button compila">Compila ora</button>
+                                    <button class="full__button compila" (click)="form()">Compila ora</button>
                                 </div>
                             </div>
                         </div>

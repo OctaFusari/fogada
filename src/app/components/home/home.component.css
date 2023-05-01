@@ -403,6 +403,7 @@ E
 }
 
 .body__galleria__reverse {
+    z-index: 50;
     width: 100%;
     height: 400px;
     overflow: hidden;
@@ -410,6 +411,7 @@ E
 }
 
 .body__galleria {
+    z-index: 50;
     width: 100%;
     height: 400px;
     overflow: hidden;
@@ -455,6 +457,16 @@ E
 
 .box8 {
     background-image: url('../../../assets/images/carousel__image/ci_9.jpg');
+}
+
+.gal__comp {
+    /*     margin: 1vw 1vw 0vw 30vw;
+    z-index: 99;
+    border: 5px solid var(--fogada__blue);
+    border-radius: 100%;
+    height: 3cm;
+    width: 3cm;
+    position: sticky; */
 }
 
 
