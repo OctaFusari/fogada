@@ -126,6 +126,10 @@ export class HomeComponent implements OnInit {
     }
     animate();
 
+    var carousel:any = document.querySelector('.body__galleria');
+    var carousel__reverse:any = document.querySelector('.body__galleria__reverse');
+    var galleria__plus:any = document.querySelector('.galleria__plus') as HTMLElement;
+
     const textElement:any = document.querySelector('.text');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -152,16 +156,13 @@ export class HomeComponent implements OnInit {
       }, animationDuration / (targetValue / increment));
     }
     
-    var carousel:any = document.querySelector('.body__galleria');
-    var carousel__reverse:any = document.querySelector('.body__galleria__reverse');
-
     let lastscroll = 0;
 
     carousel.scrollLeft += 600;
     carousel__reverse.scrollLeft += 3000;
 
     window.addEventListener('scroll', (size:any) => {
-      
+      console.log(scrollY)
       if(lastscroll < scrollY){
         carousel.scrollLeft += 2;
         carousel__reverse.scrollLeft -= 2;
@@ -169,11 +170,10 @@ export class HomeComponent implements OnInit {
         carousel.scrollLeft -= 2;
         carousel__reverse.scrollLeft += 2;
       }
-
       lastscroll = scrollY
     })
 
-    let targetTime = new Date("2023-05-01T00:00:00").getTime();
+    let targetTime = new Date("2023-06-10T00:00:00").getTime();
     this.countdown(targetTime);
   }
   
