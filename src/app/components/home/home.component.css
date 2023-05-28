@@ -3,7 +3,7 @@
 }
 
 .container__generale {
-    padding: 5vw 10vw 10vw 10vw;
+    padding: 5vw 10vw 0 10vw;
 }
 
 .title__upper {
@@ -177,7 +177,7 @@ button {
         display: block;
         position: relative;
     }
-    .upper__body {
+    .upper__body__inside {
         display: flex;
         align-items: center;
     }
@@ -206,10 +206,19 @@ E
 }
 
 .core__body__superior {
+    padding-top: 6vw;
+}
+
+.core__body__superior__inside {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: ". .";
+}
+
+.core__body__programma {
+    padding-top: 10vw;
+    margin: 0 4vw 0 4vw;
 }
 
 .testo__body {
@@ -269,13 +278,14 @@ E
 }
 
 .core__body__percorso__image img {
-    margin-top: 4vw;
+    margin-top: -2cm;
     width: 80vw;
 }
 
 .edizioni {
     position: fixed;
     z-index: 99;
+    display: none;
 }
 
 .edizioni div {
@@ -327,7 +337,7 @@ E
     font-size: 2rem;
 }
 
-.container__iscrizioni__numbers__upper {
+.iscrizioni__container {
     margin: 14vw 0 20vw 0;
 }
 
@@ -579,3 +589,70 @@ R
     width: 100%;
     z-index: 90;
 }
+
+.navabar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    margin: 7vw 7vw 2vw 7vw;
+}
+
+.dotts {
+    margin-top: -14px;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    height: 14px;
+    width: 14px;
+    border-radius: 14px;
+    border: 5px solid rgba(228, 227, 227, 0.603);
+}
+
+.line {
+    width: 0;
+    height: 6px;
+    transition: height 0.5s ease;
+    background-color: rgba(228, 227, 227, 0.603);
+    border-radius: 10px;
+}
+
+.core__body__superior {
+    height: 900px;
+}
+
+.core__body__superior__inside {}
+
+.core__body__percorso {
+    height: 1200px;
+}
+
+.core__body__percorso__inside {}
+
+.core__body__programma {
+    height: 900px;
+}
+
+.core__body__programma__inside {}
+
+.iscrizioni__container {
+    height: 400px;
+}
+
+.iscrizioni__container__inside {}
+
+.galleria__container {
+    height: 900px;
+}
+
+.galleria__container__inside {}
+
+.lower__body {
+    height: 900px;
+    margin-bottom: -4cm;
+}
+
+.lower__body__inside {}
