@@ -77,3 +77,21 @@ h4 {
     border: 2px solid var(--fogada__blue);
     background-color: var(--fogada__blue);
 }
+
+.light__button {
+    color: var(--fogada__blue);
+    border-top: 2px solid var(--fogada__blue);
+    border-bottom: 2px solid var(--fogada__blue);
+    border-left: 2px solid var(--background);
+    border-right: 2px solid var(--background);
+    background-color: var(--background);
+}
+
+.light__button:hover {
+    color: var(--background);
+    border-top: 2px solid var(--fogada__blue);
+    border-bottom: 2px solid var(--fogada__blue);
+    border-left: 2px solid var(--fogada__blue);
+    border-right: 2px solid var(--fogada__blue);
+    background-color: var(--fogada__blue);
+}
