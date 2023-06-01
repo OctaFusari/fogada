@@ -320,9 +320,13 @@ E
     color: var(--text__back);
 }
 
+.iscrizioni__container__text{
+    margin-top: -14cm;
+    position: relative;
+}
+
 .iscrizioni__container__images {
     margin-top: -8vw;
-    position: absolute;
     z-index: -2;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -397,8 +401,6 @@ E
     }
 }
 
-@media only screen and (max-width:1111px) {}
-
 .lower__body__up {
     z-index: 99;
     position: sticky;
@@ -418,6 +420,7 @@ E
 
 .countdown__output__container {
     margin-top: -14cm;
+    width: 100vw;
     position: absolute;
     z-index: 0;
 }
@@ -526,6 +529,11 @@ R
     .footer {
         height: 600px;
     }
+
+    .lower__body {
+        height: 900px;
+        margin-bottom: -6cm;
+    }
 }
 
 .footer a {
@@ -574,6 +582,7 @@ R
 
 .octimal {
     margin-top: 2vw;
+    margin-bottom: 4vw;
     grid-area: octimal;
     text-align: center;
 }
@@ -606,19 +615,26 @@ R
     z-index: 90;
 }
 
-.navabar {
+.navbar {
+    z-index: 99;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 99;
-    margin: 7vw 14vw 2vw 14vw;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vw;
+}
+
+.navbar__inside{
+    width: 800px;
 }
 
 .dotts {
     margin-top: -14px;
     display: flex;
     justify-content: center;
+    width: 800px;
 }
 
 .dot {
@@ -634,7 +650,8 @@ R
     transition: height 0.5s ease;
     background-color: rgba(228, 227, 227, 0.603);
     border-radius: 10px;
-    max-width: 1380px;
+    width: 800px;
+    
 }
 
 .core__body__superior {
@@ -683,9 +700,10 @@ R
 
 .lower__body {
     height: 900px;
-    margin-bottom: -4cm;
 }
 
 .lower__body__inside {
     padding: 8vw 0 0 0;
+    position: absolute;
+    bottom: 880px;
 }

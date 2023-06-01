@@ -173,10 +173,11 @@ export class HomeComponent implements OnInit {
         sh: any = 'scrollHeight';
 
       var percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
-      if (window.innerWidth > 1200) {
-        line.style.width = percent * 15.8 + "px"
-      } else {
-        line.style.width = percent * 15.8 + "px"
+      console.log(percent * 9);
+      if ((percent * 9) <= 800) {
+        
+          line.style.width = percent * 9 + "px"
+        
       }
 
       if (lastscroll < scrollY) {
