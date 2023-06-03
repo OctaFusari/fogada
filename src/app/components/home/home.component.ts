@@ -126,10 +126,6 @@ export class HomeComponent implements OnInit {
     }
     animate();
 
-    var carousel: any = document.querySelector('.body__galleria');
-    var carousel__reverse: any = document.querySelector('.body__galleria__reverse');
-    var galleria__plus: any = document.querySelector('.galleria__plus') as HTMLElement;
-
     const textElement: any = document.querySelector('.text');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -148,7 +144,7 @@ export class HomeComponent implements OnInit {
       const targetValue = 348;
       const intervalId = setInterval(() => {
         count += increment;
-        textElement.textContent = count.toString();
+        textElement.textContent ="Iscrizioni annuali " + count.toString();
 
         if (count >= targetValue) {
           clearInterval(intervalId);
@@ -158,26 +154,23 @@ export class HomeComponent implements OnInit {
 
     let lastscroll = 0;
 
+    var carousel: any = document.querySelector('.body__galleria');
+    var carousel__reverse: any = document.querySelector('.body__galleria__reverse');
+
     carousel.scrollLeft += 600;
     carousel__reverse.scrollLeft += 3000;
 
     window.addEventListener('scroll', (size: any) => {
-
-      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       const line = document.querySelector('.line') as HTMLElement;
-      /*       line.style.width = `${scrollPercentage}%`;
-       */
+
       var h: any = document.documentElement,
         b: any = document.body,
         st: any = 'scrollTop',
         sh: any = 'scrollHeight';
 
       var percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
-      console.log(percent * 9);
       if ((percent * 9) <= 800) {
-        
-          line.style.width = percent * 9 + "px"
-        
+          line.style.width = percent * 9.6 + "px"
       }
 
       if (lastscroll < scrollY) {
@@ -187,10 +180,7 @@ export class HomeComponent implements OnInit {
         carousel.scrollLeft -= 2;
         carousel__reverse.scrollLeft += 2;
       }
-      lastscroll = scrollY
-
-
-
+      lastscroll = scrollY;
 
     })
 
@@ -202,6 +192,7 @@ export class HomeComponent implements OnInit {
 
   countdown(targetTime: number) {
     const outputElement: any = document.getElementById("countdown-output");
+    const outputElement1: any = document.getElementById("countdown-output1");
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const remainingTime = Math.floor((targetTime - now) / 1000);
@@ -212,8 +203,10 @@ export class HomeComponent implements OnInit {
         const hours = Math.floor((remainingTime % (24 * 60 * 60)) / (60 * 60));
         const minutes = Math.floor((remainingTime % (60 * 60)) / 60);
         const seconds = Math.floor(remainingTime % 60);
-        let date = `${days} giorni, ${hours} ore, ${minutes} minuti, ${seconds} alla gara`
+        let date = `${days} giorni, ${hours} ore,`
+        let date1 = `${minutes} minuti, ${seconds}`
         outputElement.innerText = date.toString();
+        outputElement1.innerText = date1.toString();
 
       }
     }, 1000);
