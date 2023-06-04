@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   coreBody = 0;
   changeState(mode: any) {
-    if (mode == "sci") {
+    if (mode == 1) {
       this.coreBody = 1
       document.documentElement.style.setProperty('--background', 'rgba(14, 14, 14)');
       document.documentElement.style.setProperty('--text', 'rgb(201, 201, 201)');

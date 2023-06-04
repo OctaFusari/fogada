@@ -3,6 +3,12 @@
     overflow-x: hidden;
 }
 
+.change__mode {
+    position: fixed;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
 .container__generale {
     padding: 0 10vw 0 10vw;
 }
@@ -503,7 +509,7 @@ R
 }
 
 .footer a {
-    color: white;
+    color: white !important;
 }
 
 .octimal {
