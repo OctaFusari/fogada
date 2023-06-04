@@ -184,7 +184,7 @@ export class HomeComponent implements OnInit {
 
     })
 
-    let targetTime = new Date("2023-06-10T00:00:00").getTime();
+    let targetTime = new Date("2023-07-01T00:00:00").getTime();
     this.countdown(targetTime);
   }
 
@@ -218,7 +218,7 @@ export class HomeComponent implements OnInit {
 
 
   form() {
-    window.location.href = "https://docs.google.com/forms/d/1-If1BUC846O_ovDsTYCNOjgesHE7IYLZVVn_WnIIOnU/viewform?edit_requested=true";
+    window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSfYojPM-BkPbrxzUe6n7jOfhN2KhT5sw6CgIzPlTIALEGr8yg/viewform";
   }
 
   scroll(el: HTMLElement) {

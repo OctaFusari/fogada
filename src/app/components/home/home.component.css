@@ -265,6 +265,9 @@ E
     font-size: 20rem;
     color: var(--text__back);
     width: 50cm;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .iscrizioni__container__text {
@@ -511,13 +514,13 @@ R
 }
 
 .octimal h4 {
-    font-family: 'Montserrat', sans-serif;
     color: #3b3b3b44;
     transition-duration: 0.2s;
+    font-family: 'Montserrat', sans-serif !important;
+    cursor: pointer;
 }
 
 .octimal h4:hover {
-    font-family: 'Montserrat', sans-serif;
     color: #007E6D
 }
 
@@ -646,8 +649,27 @@ R
     .footer {
         height: 600px;
     }
+    .upper__body {
+        height: 760px;
+    }
     .lower__body__inside {
-        bottom: 1200px;
+        bottom: 1000px;
+    }
+    .core__body__superior {
+        height: 1000px;
+    }
+    .core__body__percorso {
+        height: 1200px;
+    }
+    .core__body__programma {
+        height: 1000px;
+    }
+    .iscrizioni__container {
+        height: 1000px;
+    }
+    .galleria__container {
+        height: 1200px;
+        margin-top: 25vw
     }
 }
 
@@ -993,5 +1015,8 @@ R
     }
     .octimal h4 {
         font-size: 1.3rem;
+    }
+    .big__text {
+        display: none;
     }
 }

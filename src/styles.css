@@ -1,6 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond&family=Montserrat:ital,wght@1,900&display=swap');
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"), url(./assets/Montserrat-BlackItalic.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Bebas Neue";
+    src: local("Bebas Neue"), url(./assets/Bebas_Neue/BebasNeue-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "EB Garamond";
+    src: local("EB Garamond"), url(./assets/EB_Garamond/EBGaramond-VariableFont_wght.ttf) format("truetype");
+}
+
 :root {
     --background: rgb(255, 255, 255);
     --text: rgb(63, 63, 63);
@@ -8,13 +22,6 @@
     --text__back__counter: rgba(134, 134, 134, 0.267);
     --fogada__blue: rgb(0, 102, 136);
     --fogada__blue__glassed: rgba(0, 102, 136, 0.514);
-}
-
-h1,
-h3,
-h4 {
-    font-family: 'Bebas Neue', cursive;
-    color: var(--fogada__blue);
 }
 
 body,
