@@ -62,7 +62,7 @@ h4 {
 }
 
 .full__button {
-    color: var(--background);
+    color: rgb(255, 255, 255);
     border: 2px solid var(--fogada__blue);
     background-color: var(--fogada__blue);
 }
@@ -80,7 +80,7 @@ h4 {
 }
 
 .full__button__light:hover {
-    color: var(--background);
+    color: rgb(255, 255, 255);
     border: 2px solid var(--fogada__blue);
     background-color: var(--fogada__blue);
 }
@@ -95,7 +95,7 @@ h4 {
 }
 
 .light__button:hover {
-    color: var(--background);
+    color: rgb(255, 255, 255);
     border-top: 2px solid var(--fogada__blue);
     border-bottom: 2px solid var(--fogada__blue);
     border-left: 2px solid var(--fogada__blue);

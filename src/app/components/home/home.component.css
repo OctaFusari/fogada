@@ -60,6 +60,15 @@
     color: var(--fogada__blue);
 }
 
+.title__upper__sezione__uno a {
+    margin-right: -10vw;
+    margin-left: 6vw;
+    padding: 5px 20px 5px 20px;
+    text-align: center;
+    color: white !important;
+    background-color: var(--fogada__blue);
+}
+
 .title__upper__sezione__uno h3 {
     margin-top: -0.0cm;
     margin-left: 3vw;
@@ -355,7 +364,7 @@ E
 
 .countdown__output__container {
     margin-top: -15cm;
-    width: 47cm;
+    width: 54cm;
     position: absolute;
     z-index: 0;
 }
@@ -756,6 +765,10 @@ R
         font-size: 3rem;
         margin-right: 0vw;
         margin-left: -4cm;
+    }
+    .title__upper__sezione__uno a {
+        margin-right: 0vw;
+        margin-left: 0vw;
     }
     .title__upper {
         z-index: 99;
