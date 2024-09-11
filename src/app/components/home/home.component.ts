@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     if (mode == 1) {
       this.coreBody = 1
       document.documentElement.style.setProperty('--background', 'rgba(14, 14, 14)');
-      document.documentElement.style.setProperty('--text', 'rgb(201, 201, 201)');
+      document.documentElement.style.setProperty('--text', 'rgb(255, 255, 255)');
       document.documentElement.style.setProperty('--text__back', 'rgba(36, 36, 36, 0.267)');
     } else {
       this.coreBody = 0
@@ -184,7 +184,7 @@ export class HomeComponent implements OnInit {
 
     })
 
-    let targetTime = new Date("2023-07-01T00:00:00").getTime();
+    let targetTime = new Date("2024-10-13T00:00:00").getTime();
     this.countdown(targetTime);
   }
 
@@ -218,7 +218,7 @@ export class HomeComponent implements OnInit {
 
 
   form() {
-    window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSfYojPM-BkPbrxzUe6n7jOfhN2KhT5sw6CgIzPlTIALEGr8yg/viewform";
+    window.location.href = "https://forms.gle/s48sXQ5dBoGdyDv66 ";
   }
 
   scroll(el: HTMLElement) {

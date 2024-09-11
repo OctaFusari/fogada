@@ -880,6 +880,9 @@ R
 }
 
 @media only screen and (max-width:700px) {
+    .iscrizioni__container__inside{
+        margin-top: 4cm;
+    }
     .text {
         width: 8cm;
     }
