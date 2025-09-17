@@ -1,11 +1,2 @@
-[build]
-  command = "npm run build"
-  publish = "dist/fogada"
-
 [build.environment]
-  NODE_VERSION = "20.19.0"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  NODE_VERSION = "22.18.0"
