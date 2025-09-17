@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "dist/fogada"
+
+[build.environment]
+  NODE_VERSION = ">=20.19.0"
