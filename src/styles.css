@@ -1,0 +1,107 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"), url(./assets/Montserrat-BlackItalic.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Bebas Neue";
+    src: local("Bebas Neue"), url(./assets/Bebas_Neue/BebasNeue-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "EB Garamond";
+    src: local("EB Garamond"), url(./assets/EB_Garamond/EBGaramond-VariableFont_wght.ttf) format("truetype");
+}
+
+:root {
+    --background: rgb(255, 255, 255);
+    --text: rgb(63, 63, 63);
+    --text__back: rgba(221, 221, 221, 0.267);
+    --text__back__counter: rgba(134, 134, 134, 0.267);
+    --fogada__blue: rgb(0, 102, 136);
+    --fogada__blue__glassed: rgba(0, 102, 136, 0.514);
+}
+
+body,
+html {
+    margin: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    background-color: var(--background);
+    transition: .4s;
+}
+
+* {
+    font-family: 'EB Garamond', serif;
+    font-weight: 700;
+    color: var(--text);
+}
+
+h1 {
+    font-size: 6rem;
+    margin-bottom: 0;
+}
+
+p,
+a {
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    line-height: 2.5rem;
+}
+
+h1,
+h3,
+h4 {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--fogada__blue);
+}
+
+.full__button {
+    color: rgb(255, 255, 255);
+    border: 2px solid var(--fogada__blue);
+    background-color: var(--fogada__blue);
+}
+
+.full__button:hover {
+    color: var(--fogada__blue);
+    border: 2px solid var(--fogada__blue);
+    background-color: var(--background);
+}
+
+.full__button__light {
+    color: var(--fogada__blue);
+    border: 2px solid var(--fogada__blue);
+    background-color: var(--background);
+}
+
+.full__button__light:hover {
+    color: rgb(255, 255, 255);
+    border: 2px solid var(--fogada__blue);
+    background-color: var(--fogada__blue);
+}
+
+.light__button {
+    color: var(--fogada__blue);
+    border-top: 2px solid var(--fogada__blue);
+    border-bottom: 2px solid var(--fogada__blue);
+    border-left: 2px solid var(--background);
+    border-right: 2px solid var(--background);
+    background-color: var(--background);
+}
+
+.light__button:hover {
+    color: rgb(255, 255, 255);
+    border-top: 2px solid var(--fogada__blue);
+    border-bottom: 2px solid var(--fogada__blue);
+    border-left: 2px solid var(--fogada__blue);
+    border-right: 2px solid var(--fogada__blue);
+    background-color: var(--fogada__blue);
+}
