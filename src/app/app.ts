@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import * as THREE from "three";
 import { CommonModule } from '@angular/common';
 @Component({
@@ -7,12 +7,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App implements OnInit  {
+export class App implements OnInit, OnDestroy {
   title = 'fogada';
 
-  load = 1
 @ViewChild('animazioneCentro', { static: true })
   canvasElementRef!: ElementRef<HTMLCanvasElement>;
+  private cleanup: Array<() => void> = [];
 
   coreBody = 0;
   changeState(mode: any) {
@@ -32,20 +32,13 @@ export class App implements OnInit  {
   constructor() { }
 
   ngOnInit(): void {
-    this.load = 1;
-    setTimeout(() => {
-      this.load = 0;
-    },20000);
-    
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer({ canvas: this.canvasElementRef.nativeElement, alpha: true, antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setClearColor(0x0E0E0E, 0);
-
-    document.body.appendChild(renderer.domElement);
 
 
     let curve__x = 0;
@@ -91,7 +84,7 @@ export class App implements OnInit  {
     });
 
     // Create the final object to add to the scene
-    const splineObject = new THREE.LineSegments(geometry, material);
+    const splineObject = new THREE.Line(geometry, material);
 
     scene.add(splineObject);
 
@@ -102,7 +95,7 @@ export class App implements OnInit  {
       height: window.innerHeight
     }
 
-    window.addEventListener('resize', (size: any) => {
+    const onResize = () => {
       grandezze.width = window.innerWidth;
       grandezze.height = window.innerHeight;
 
@@ -114,9 +107,12 @@ export class App implements OnInit  {
 
       renderer.render(scene, camera); // -> Also needed
 
-    })
+    };
+    window.addEventListener('resize', onResize);
+    this.cleanup.push(() => window.removeEventListener('resize', onResize));
 
 
+    let frameId = 0;
     function animate() {
 
       if (window.innerWidth < 1111) {
@@ -129,21 +125,26 @@ export class App implements OnInit  {
         camera.position.z = 40;
       }
 
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
       renderer.render(scene, camera);
     }
     animate();
+    this.cleanup.push(() => { cancelAnimationFrame(frameId); renderer.dispose(); geometry.dispose(); material.dispose(); });
 
-    const textElement: any = document.querySelector('.text');
+    const textElement = document.querySelector<HTMLElement>('.text');
+    if (textElement) {
+    const counterElement = textElement;
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           animateText();
+          observer.unobserve(entry.target);
         }
       });
     });
 
     observer.observe(textElement);
+    this.cleanup.push(() => observer.disconnect());
 
     function animateText() {
       let count = 0;
@@ -152,23 +153,24 @@ export class App implements OnInit  {
       const targetValue = 348;
       const intervalId = setInterval(() => {
         count += increment;
-        textElement.textContent ="Iscrizioni annuali " + count.toString();
+        counterElement.textContent = "Iscrizioni annuali " + count.toString();
 
         if (count >= targetValue) {
           clearInterval(intervalId);
         }
       }, animationDuration / (targetValue / increment));
     }
+    }
 
     let lastscroll = 0;
 
-    var carousel: any = document.querySelector('.body__galleria');
-    var carousel__reverse: any = document.querySelector('.body__galleria__reverse');
+    const carousel = document.querySelector<HTMLElement>('.body__galleria');
+    const carousel__reverse = document.querySelector<HTMLElement>('.body__galleria__reverse');
 
-    carousel.scrollLeft += 600;
-    carousel__reverse.scrollLeft += 3000;
+    if (carousel) carousel.scrollLeft += 600;
+    if (carousel__reverse) carousel__reverse.scrollLeft += 3000;
 
-    window.addEventListener('scroll', (size: any) => {
+    const onScroll = () => {
       const line = document.querySelector('.line') as HTMLElement;
 
       var h: any = document.documentElement,
@@ -182,29 +184,34 @@ export class App implements OnInit  {
       }
 
       if (lastscroll < scrollY) {
-        carousel.scrollLeft += 2;
-        carousel__reverse.scrollLeft -= 2;
+        if (carousel) carousel.scrollLeft += 2;
+        if (carousel__reverse) carousel__reverse.scrollLeft -= 2;
       } else if (lastscroll > scrollY) {
-        carousel.scrollLeft -= 2;
-        carousel__reverse.scrollLeft += 2;
+        if (carousel) carousel.scrollLeft -= 2;
+        if (carousel__reverse) carousel__reverse.scrollLeft += 2;
       }
       lastscroll = scrollY;
 
-    })
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    this.cleanup.push(() => window.removeEventListener('scroll', onScroll));
 
-    let targetTime = new Date("2025-10-12T00:00:00").getTime();
+    const targetTime = new Date("2026-10-11T00:00:00+02:00").getTime();
     this.countdown(targetTime);
   }
 
 
 
   countdown(targetTime: number) {
-    const outputElement: any = document.getElementById("countdown-output");
-    const outputElement1: any = document.getElementById("countdown-output1");
-    const interval = setInterval(() => {
+    const outputElement = document.getElementById("countdown-output");
+    const outputElement1 = document.getElementById("countdown-output1");
+    if (!outputElement || !outputElement1) return;
+    const update = () => {
       const now = new Date().getTime();
       const remainingTime = Math.floor((targetTime - now) / 1000);
-      if (remainingTime < 0) {
+      if (remainingTime <= 0) {
+        outputElement.innerText = 'La gara è iniziata';
+        outputElement1.innerText = '';
         clearInterval(interval);
       } else {
         const days = Math.floor(remainingTime / (24 * 60 * 60));
@@ -217,7 +224,10 @@ export class App implements OnInit  {
         outputElement1.innerText = date1.toString();
 
       }
-    }, 1000);
+    };
+    const interval = setInterval(update, 1000);
+    update();
+    this.cleanup.push(() => clearInterval(interval));
   }
 
   octimal() {
@@ -225,8 +235,8 @@ export class App implements OnInit  {
   }
 
 
-  form() {
-    window.location.href = "https://forms.gle/1GP7PvQxR8gAscLN8";
+  ngOnDestroy(): void {
+    this.cleanup.forEach(dispose => dispose());
   }
 
   scroll(el: HTMLElement) {
@@ -235,4 +245,3 @@ export class App implements OnInit  {
   }
 
 }
-
